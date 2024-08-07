@@ -3,11 +3,12 @@ import logo from "../../assets/logo.png";
 import { useState } from "react";
 import { TbMenu2 } from "react-icons/tb";
 import { CgClose } from "react-icons/cg";
-import { NavLink } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 
 export const NavBar = () => {
   const [isActive, setIsactive] = useState(false);
   const [openMenu, setOpenMenu] = useState(false);
+  const { pathname } = useLocation();
 
   window.addEventListener("scroll", () => {
     window.scrollY > 30 ? setIsactive(true) : setIsactive(false);

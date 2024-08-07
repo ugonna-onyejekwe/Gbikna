@@ -26,6 +26,9 @@ nav {
 
     .logo {
       width: 100px;
+      @media (max-width: 375px) {
+        width: 70px;
+      }
     }
 
     .links {
@@ -63,6 +66,12 @@ nav {
 
       @media (max-width: 425px) {
         gap: 10px;
+      }
+
+      @media (max-width: 375px) {
+        button {
+          font-size: 13px;
+        }
       }
     }
 
