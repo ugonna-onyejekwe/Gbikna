@@ -4,7 +4,7 @@ import { RiCheckDoubleFill } from "react-icons/ri";
 
 export const About = () => {
   return (
-    <section className="about_page">
+    <section className="about_page" id="about">
       <div className="container">
         <div className="txt_con" data-aos="fade-right">
           <h2>Gbikna Limited.</h2>

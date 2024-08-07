@@ -3,6 +3,7 @@ import logo from "../../assets/logo.png";
 import { useState } from "react";
 import { TbMenu2 } from "react-icons/tb";
 import { CgClose } from "react-icons/cg";
+import { NavLink } from "react-router-dom";
 
 export const NavBar = () => {
   const [isActive, setIsactive] = useState(false);
@@ -20,12 +21,18 @@ export const NavBar = () => {
         </div>
 
         <div className={openMenu ? "links active" : "links"}>
-          <a href="#" className="active">
+          <a href="#" className="active" onClick={() => setOpenMenu(false)}>
             home
           </a>
-          <a href="#">about</a>
-          <a href="#">features</a>
-          <a href="#">contact</a>
+          <a href="#about" onClick={() => setOpenMenu(false)}>
+            about
+          </a>
+          <a href="#" onClick={() => setOpenMenu(false)}>
+            features
+          </a>
+          <a href="#" onClick={() => setOpenMenu(false)}>
+            contact
+          </a>
         </div>
         <div className="btn_section">
           <button>Signup / Download</button>
