@@ -25,12 +25,18 @@ export const NavBar = () => {
           </div>
 
           <div className="links">
-            <a href="#" className="active">
+            <a href="#" className="active" onClick={() => setOpenMenu(false)}>
               home
             </a>
-            <a href="#about">about</a>
-            <a href="#">features</a>
-            <a href="#">contact</a>
+            <a href="#about" onClick={() => setOpenMenu(false)}>
+              about
+            </a>
+            <a href="#" onClick={() => setOpenMenu(false)}>
+              features
+            </a>
+            <a href="#" onClick={() => setOpenMenu(false)}>
+              contact
+            </a>
           </div>
 
           <div className="btn">

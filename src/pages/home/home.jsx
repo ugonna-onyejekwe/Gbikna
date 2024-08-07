@@ -10,7 +10,7 @@ export const Home = () => {
       <div className="container">
         <div className="txt_con" data-aos="fade-right">
           <h1>
-            Start small and get
+            Start small and go
             <br /> global with <span>Tella</span>
           </h1>
 
