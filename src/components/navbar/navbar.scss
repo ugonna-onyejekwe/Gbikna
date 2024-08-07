@@ -1,7 +1,6 @@
 @import "../../variables.scss";
 
 nav {
-  position: fixed;
   left: 0;
   top: 0;
   right: 0;
@@ -9,10 +8,9 @@ nav {
   background: transparent;
   z-index: 100;
   transition: 0.6s ease;
-
-  &.active {
-    background: rgba(0, 0, 0, 0.89);
-  }
+  background: white;
+  position: fixed;
+  box-shadow: 0 0 5px grey;
 
   .container {
     display: flex;
@@ -21,56 +19,42 @@ nav {
 
     .menu_btn {
       display: none;
-      z-index: 3;
     }
 
     .logo {
       width: 100px;
-      @media (max-width: 375px) {
-        width: 70px;
-      }
     }
 
-    .links {
+    .navigators {
       display: flex;
       align-items: center;
-      gap: 30px;
+      gap: 40px;
 
-      a {
-        text-transform: capitalize;
-        font-weight: 500;
-        color: $text_color_white;
-        transition: 0.4s ease;
-        font-size: 15px;
+      .links {
+        display: flex;
+        align-items: center;
+        gap: 40px;
 
-        &.active,
-        &:hover {
-          color: $primary_color;
+        a {
+          text-transform: capitalize;
+          font-weight: 500;
+          color: grey;
+          position: relative;
+          transition: 0.4s ease;
+          font-size: 15px;
+
+          &.active,
+          &:hover {
+            color: $primary_color2;
+          }
         }
       }
-    }
-
-    .btn_section {
-      display: flex;
-      align-items: center;
-      gap: 30px;
 
       button {
-        border-color: $primary_color;
-        color: $text_color_white;
+        padding: 13px 20px;
 
         &:hover {
-          background: #0d3151;
-        }
-      }
-
-      @media (max-width: 425px) {
-        gap: 10px;
-      }
-
-      @media (max-width: 375px) {
-        button {
-          font-size: 13px;
+          padding: 13px 20px;
         }
       }
     }
@@ -79,45 +63,64 @@ nav {
       .menu_btn {
         display: block;
         cursor: pointer;
-        color: $text_color_white;
-        font-size: 25px;
-      }
 
-      .links {
-        position: fixed;
-        right: 5%;
-        height: 80vh;
-        background: white;
-        top: 80px;
-        width: 90%;
-        border-radius: 10px;
-        overflow: hidden;
-        flex-direction: column;
-        gap: 30px;
-        padding-top: 20px;
-        z-index: 2;
-        opacity: 0;
-        transform: scale(0.5);
-        pointer-events: none;
-        visibility: hidden;
-        transition: 0.3s ease;
-
-        &.active {
-          transform: scale(1);
-          opacity: 1;
-          pointer-events: all;
-          visibility: visible;
+        &.close {
+          color: $text_color_dark;
+          font-size: 20px;
         }
 
-        a {
+        &.open {
+          font-size: 23px;
           color: $text_color_dark;
-          width: 100%;
-          padding: 20px;
+        }
+      }
 
-          &.active,
-          &:hover {
-            background: $primary_color;
-            color: white;
+      .navigators {
+        position: fixed;
+        right: -110%;
+        top: 0;
+        height: 100vh;
+        background: white;
+        box-shadow: 0 0 5px grey;
+        flex-direction: column;
+        gap: 30px;
+        padding: 20px;
+        max-width: 350px;
+        width: 100%;
+        align-items: unset;
+        gap: 10px;
+        z-index: 2;
+        transition: 0.4s ease;
+
+        &.active {
+          right: 0;
+        }
+
+        .links {
+          flex-direction: column;
+          align-items: unset;
+          gap: 10px;
+
+          a {
+            padding: 20px;
+
+            &.active,
+            &:hover {
+              background: #09233927;
+              border-radius: 5px;
+              overflow: hidden;
+            }
+          }
+        }
+
+        .btn {
+          width: 100%;
+
+          button {
+            width: 100%;
+            display: flex;
+            justify-content: left;
+            padding: 20px;
           }
         }
       }
@@ -139,12 +142,11 @@ nav {
       opacity: 0;
       visibility: hidden;
       pointer-events: none;
-      transition: 0.4s ease;
 
       &.active {
-        opacity: 0.8;
-        visibility: visible;
+        opacity: 0.5;
         pointer-events: all;
+        visibility: visible;
       }
     }
   }

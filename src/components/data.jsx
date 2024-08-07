@@ -1,30 +1,29 @@
-import {
-  RiBarChartBoxLine,
-  RiDatabase2Line,
-  RiFileCopy2Line,
-  RiSecurePaymentLine,
-  RiStoreLine,
-} from "react-icons/ri";
+import { MdOutlinePayment, MdSecurity } from "react-icons/md";
+import { RiGlobalLine } from "react-icons/ri";
+import { TbArrowsExchange } from "react-icons/tb";
 
-export const boxData = [
+export const service = [
   {
-    icon: <RiStoreLine />,
-    name: "In-store Shopping",
+    icon: <MdOutlinePayment />,
+    header: "Payment Application",
+    brief:
+      "EMV Application for Point of Sale and Mobile Point of Sale (Windows and Linux based)",
   },
   {
-    icon: <RiBarChartBoxLine />,
-    name: "Free Data Analytics",
+    icon: <RiGlobalLine />,
+    header: "Global Security Standards",
+    brief:
+      "Global Card Scheme Certification (MTIP and ADVT) for all our terminals.",
   },
   {
-    icon: <RiSecurePaymentLine />,
-    name: "Free offline version",
+    icon: <TbArrowsExchange />,
+    header: "Supported Transactions",
+    brief: "ICC, NFC, MAG SWIPE, QR CODE, USSD and WALLET ENGINES.",
   },
   {
-    icon: <RiFileCopy2Line />,
-    name: "Online receipts",
-  },
-  {
-    icon: <RiDatabase2Line />,
-    name: "take your shop online",
+    icon: <MdSecurity />,
+    header: "Third Party Integrations",
+    brief:
+      "Custom Implementation with Global Card Switches (Postillion and Transware Online).",
   },
 ];
